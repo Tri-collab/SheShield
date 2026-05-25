@@ -57,7 +57,7 @@ const Dashboard = () => {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/contacts/" + user.id);
+      const res = await axios.get("http://sheshield-api.onrender.com/api/contacts/" + user.id);
       setContacts(res.data.contacts);
     } catch (err) {
       console.log(err);
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/sos/history/" + user.id);
+      const res = await axios.get("http://sheshield-api.onrender.com/api/sos/history/" + user.id);
       setSosHistory(res.data.history);
     } catch (err) {
       console.log(err);
@@ -118,7 +118,7 @@ const Dashboard = () => {
         sendBrowserNotification("SOS ALERT!", "Emergency SOS triggered! Location shared.");
         startRecording();
         try {
-          await axios.post("http://localhost:5000/api/sos/send", { userId: user.id, location: loc });
+          await axios.post("http://sheshield-api.onrender.com/api/sos/send", { userId: user.id, location: loc });
           fetchHistory();
         } catch (err) {
           console.log(err);
@@ -134,7 +134,7 @@ const Dashboard = () => {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:5000/api/contacts/add", {
+      const res = await axios.post("http://sheshield-api.onrender.com/api/contacts/add", {
         userId: user.id,
         name: contact.name,
         phone: contact.phone,
@@ -151,7 +151,7 @@ const Dashboard = () => {
 
   const handleDeleteContact = async (contactId) => {
     try {
-      const res = await axios.delete("http://localhost:5000/api/contacts/" + user.id + "/" + contactId);
+      const res = await axios.delete("http://sheshield-api.onrender.com/api/contacts/" + user.id + "/" + contactId);
       setContacts(res.data.contacts);
       addNotification("Contact Deleted!");
     } catch (err) {

@@ -59,7 +59,7 @@ const Dashboard = () => {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/contacts/" + user.id);
+      const res = await axios.get("http://sheshield-api.onrender.com/api/contacts/" + user.id);
       setContacts(res.data.contacts);
     } catch (err) {
       console.log(err);

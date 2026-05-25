@@ -15,7 +15,7 @@ const Admin = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users");
+      const res = await axios.get("http://sheshield-api.onrender.com/api/admin/users");
       setUsers(res.data.users);
     } catch (err) {
       console.log(err);
@@ -24,7 +24,7 @@ const Admin = () => {
 
   const fetchSOS = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/sos");
+      const res = await axios.get("http://sheshield-api.onrender.com/api/admin/sos");
       setSosAlerts(res.data.sos);
     } catch (err) {
       console.log(err);
