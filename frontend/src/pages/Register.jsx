@@ -59,7 +59,7 @@ const Register = () => {
     }
     setLoading(true);
     try {
-      const res = await axios.post("https://sheshield-api.onrender.com.onrender.com/api/auth/register", {
+      const res = await axios.post("https://sheshield-api.onrender.com/api/auth/register", {
         name: form.name,
         email: form.email,
         password: form.password,

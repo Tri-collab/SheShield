@@ -59,7 +59,7 @@ const Dashboard = () => {
 
   const fetchContacts = async () => {
     try {
-      const res = await axios.get("https://sheshield-api.onrender.com.onrender.com/api/contacts/" + user.id);
+      const res = await axios.get("https://sheshield-api.onrender.com/api/contacts/" + user.id);
       setContacts(res.data.contacts);
     } catch (err) {
       console.log(err);
@@ -68,7 +68,7 @@ const Dashboard = () => {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("https://sheshield-api.onrender.com.onrender.com/api/sos/history/" + user.id);
+      const res = await axios.get("https://sheshield-api.onrender.com/api/sos/history/" + user.id);
       setSosHistory(res.data.history);
     } catch (err) {
       console.log(err);
@@ -107,7 +107,7 @@ const Dashboard = () => {
     if (silentMode) {
   navigator.geolocation.getCurrentPosition(async (pos) => {
     const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-    await axios.post("https://sheshield-api.onrender.com.onrender.com/api/sos/send", { userId: user.id, location: loc });
+    await axios.post("https://sheshield-api.onrender.com/api/sos/send", { userId: user.id, location: loc });
     fetchHistory();
   });
   return;
@@ -128,7 +128,7 @@ const Dashboard = () => {
         sendBrowserNotification("SOS ALERT!", "Emergency SOS triggered! Location shared.");
         startRecording();
         try {
-          await axios.post("https://sheshield-api.onrender.com.onrender.com/api/sos/send", { userId: user.id, location: loc });
+          await axios.post("https://sheshield-api.onrender.com/api/sos/send", { userId: user.id, location: loc });
           fetchHistory();
         } catch (err) {
           console.log(err);
@@ -144,7 +144,7 @@ const Dashboard = () => {
       return;
     }
     try {
-      const res = await axios.post("https://sheshield-api.onrender.com.onrender.com/api/contacts/add", {
+      const res = await axios.post("https://sheshield-api.onrender.com/api/contacts/add", {
         userId: user.id,
         name: contact.name,
         phone: contact.phone,
@@ -161,7 +161,7 @@ const Dashboard = () => {
 
   const handleDeleteContact = async (contactId) => {
     try {
-      const res = await axios.delete("https://sheshield-api.onrender.com.onrender.com/api/contacts/" + user.id + "/" + contactId);
+      const res = await axios.delete("https://sheshield-api.onrender.com/api/contacts/" + user.id + "/" + contactId);
       setContacts(res.data.contacts);
       addNotification("Contact Deleted!");
     } catch (err) {
