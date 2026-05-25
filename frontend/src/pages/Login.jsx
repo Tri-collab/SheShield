@@ -73,7 +73,7 @@ const Login = () => {
             <div style={{ position: "relative" }}>
               <span style={{ position: "absolute", left: "14px", top: "50%", transform: "translateY(-50%)", fontSize: "16px" }}>📧</span>
               <input name="email" type="email" placeholder="your@email.com" onChange={handleChange}
-                style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: "14px", border: "2px solid #f0f0f0", fontSize: "15px", boxSizing: "border-box", outline: "none", background: "#fafafa" }}
+                style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: "14px", border: "2px solid #f0f0f0", fontSize: "15px", boxSizing: "border-box", outline: "none", background: "#333" }}
                 onFocus={(e) => e.target.style.border = "2px solid #ff6b9d"}
                 onBlur={(e) => e.target.style.border = "2px solid #f0f0f0"}
               />
@@ -85,7 +85,7 @@ const Login = () => {
             <div style={{ position: "relative" }}>
               <span style={{ position: "absolute", left: "14px", top: "50%", transform: "translateY(-50%)", fontSize: "16px" }}>🔒</span>
               <input name="password" type="password" placeholder="Enter your password" onChange={handleChange}
-                style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: "14px", border: "2px solid #f0f0f0", fontSize: "15px", boxSizing: "border-box", outline: "none", background: "#fafafa" }}
+                style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: "14px", border: "2px solid #f0f0f0", fontSize: "15px", boxSizing: "border-box", outline: "none", background: "#333" }}
                 onFocus={(e) => e.target.style.border = "2px solid #ff6b9d"}
                 onBlur={(e) => e.target.style.border = "2px solid #f0f0f0"}
               />
