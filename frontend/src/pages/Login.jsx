@@ -23,7 +23,7 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      const res = await axios.post("http://sheshield-api.onrender.com/api/auth/login", form);
+      const res = await axios.post("https://sheshield-api.onrender.com.onrender.com/api/auth/login", form);
       login(res.data.user, res.data.token);
       navigate("/dashboard");
     } catch (err) {
